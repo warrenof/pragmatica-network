@@ -80,13 +80,13 @@ let colors = {
   'yellow-lighter': '#fff9c2',
   'yellow-lightest': '#fcfbeb',
 
-  'green-darkest': '#0f2f21',
-  'green-darker': '#1a4731',
-  'green-dark': '#1f9d55',
-  'green': '#38c172',
-  'green-light': '#51d88a',
-  'green-lighter': '#a2f5bf',
-  'green-lightest': '#e3fcec',
+  'green-lightest': '#E6F6F5',
+  'green-lighter': '#99DCD9',
+  'green-light': '#4DC2BC',
+  'green': '#00A89F',
+  'green-dark': '#00978F',
+  'green-darker': '#00655F',
+  'green-darkest': '#003230',
 
   'teal-darkest': '#0d3331',
   'teal-darker': '#20504f',
@@ -96,13 +96,13 @@ let colors = {
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
 
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
-  'blue-dark': '#2779bd',
-  'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
+  'blue-lightest': '#E6EAEE',
+  'blue-lighter': '#99ABB9',
+  'blue-light': '#4D6B85',
+  'blue': '#012C51',
+  'blue-dark': '#012849',
+  'blue-darker': '#011A31',
+  'blue-darkest': '#000D18',
 
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',
@@ -207,7 +207,23 @@ module.exports = {
       'Helvetica Neue',
       'sans-serif',
     ],
+    'sans-serif': [
+      'Roboto',
+      'system-ui',
+      'BlinkMacSystemFont',
+      '-apple-system',
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif',
+    ],
     'serif': [
+      'Zilla Slab',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',
@@ -250,15 +266,15 @@ module.exports = {
   */
 
   textSizes: {
-    'xs': '.75rem',     // 12px
-    'sm': '.875rem',    // 14px
-    'base': '1rem',     // 16px
-    'lg': '1.125rem',   // 18px
-    'xl': '1.25rem',    // 20px
-    '2xl': '1.5rem',    // 24px
-    '3xl': '1.875rem',  // 30px
-    '4xl': '2.25rem',   // 36px
-    '5xl': '3rem',      // 48px
+    'xs': '.75rem', // 12px
+    'sm': '.875rem', // 14px
+    'base': '1rem', // 16px
+    'lg': '1.125rem', // 18px
+    'xl': '1.25rem', // 20px
+    '2xl': '1.5rem', // 24px
+    '3xl': '1.875rem', // 30px
+    '4xl': '2.25rem', // 36px
+    '5xl': '3rem', // 48px
   },
 
 
@@ -397,6 +413,7 @@ module.exports = {
     default: '1px',
     '0': '0',
     '2': '2px',
+    '3': '3px',
     '4': '4px',
     '8': '8px',
   },
@@ -419,7 +436,9 @@ module.exports = {
   |
   */
 
-  borderColors: global.Object.assign({ default: colors['grey-light'] }, colors),
+  borderColors: global.Object.assign({
+    default: colors['grey-light']
+  }, colors),
 
 
   /*
@@ -704,6 +723,8 @@ module.exports = {
     '4': '1rem',
     '6': '1.5rem',
     '8': '2rem',
+    '16': '4rem',
+    '32': '8rem',
   },
 
 
@@ -724,11 +745,14 @@ module.exports = {
   */
 
   shadows: {
-    default: '0 2px 4px 0 rgba(0,0,0,0.10)',
-    'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
-    'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
-    'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
-    'none': 'none',
+    default: '0 4px 4px 0 rgba(0,0,0,0.10)',
+    // 'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
+    // 'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
+    // 'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
+    // 'none': 'none',
+    'green': '6px 6px 0px 0px rgba(0,168,159,1)',
+    'blue': '6px 6px 0px 0px rgba(1,44,81,1)',
+    'white': '6px 6px 0px 0px rgba(255,256,255,1)',
   },
 
 
@@ -867,7 +891,7 @@ module.exports = {
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
-    shadows: ['responsive'],
+    shadows: ['responsive', 'hover'],
     svgFill: [],
     svgStroke: [],
     textAlign: ['responsive'],
